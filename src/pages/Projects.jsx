@@ -1,23 +1,23 @@
 import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
+import Calculator from "../components/Calculator";
+import WeatherApp from "../components/WeatherApp";
 
 export default function Projects() {
   const projectData = [
     {
       title: "Weather App",
-      image: "https://via.placeholder.com/300x200",
+      image: "",
       description: "Fetches weather data using OpenWeatherMap API with a clean UI.",
       tech: ["React", "Tailwind", "API"],
-      demoLink: "#",
-      codeLink: "#"
+      embeddedDemo: <WeatherApp/>,
     },
     {
-      title: "To-Do List",
-      image: "https://via.placeholder.com/300x200",
-      description: "Simple CRUD app to manage your daily tasks with local storage.",
-      tech: ["React", "Tailwind", "JavaScript"],
-      demoLink: "#",
-      codeLink: "#"
+      title: "Calculator Demo",
+      image: "",
+      description: "A working calculator built in React with basic math functions.",
+      tech: ["React", "JavaScript"],
+      embeddedDemo: <Calculator/>,
     },
     {
       title: "Cyber News Scraper",
@@ -87,10 +87,15 @@ export default function Projects() {
 
       {/* Project Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredProjects.length > 0 ? (
-          filteredProjects.map((proj, i) => <ProjectCard key={i} {...proj} />)
-        ) : (
-          <p className="text-gray-500">No projects found.</p>
+        {filteredProjects.map((proj, i) =>
+          proj.embeddedDemo ? (
+            <div key={i}>
+              <h2 className="text-xl font-semibold mb-2">{proj.title}</h2>
+              {proj.embeddedDemo}
+            </div>
+          ) : (
+            <ProjectCard key={i} {...proj} />
+          )
         )}
       </div>
     </div>
