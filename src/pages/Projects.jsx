@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProjectCard from "../components/ProjectCard";
 import Calculator from "../components/Calculator";
 import WeatherApp from "../components/WeatherApp";
+import CyberNews from "../components/CyberNews";
 
 export default function Projects() {
   const projectData = [
@@ -21,10 +22,10 @@ export default function Projects() {
     },
     {
       title: "Cyber News Scraper",
-      image: "https://via.placeholder.com/300x200",
+      image: "",
       description: "Scrapes latest cybersecurity news and displays them in a dashboard.",
-      tech: ["Python", "Flask", "Bootstrap"],
-      demoLink: "#",
+      tech: ["Python", "Flask", "Bootstrap", "React", "Web Scraping"],
+      embeddedDemo: <CyberNews/>,
       codeLink: "#"
     }
   ];
