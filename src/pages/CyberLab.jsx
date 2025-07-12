@@ -2,11 +2,14 @@ import CyberLabProjects from "../components/CyberLabProjects";
 import CyberLabDemos from "../components/CyberLabDemos";
 import CyberLabWriteups from "../components/CyberLabWriteups";
 import CyberLabTools from "../components/CyberLabTools";
+import CTFTrackerPanel from "../components/CTFTrackerPanel";
 
 export default function CyberLab() {
   return (
     <div className="p-6 space-y-12 max-w-6xl mx-auto">
       <h1 className="text-3xl font-bold text-indigo-700">🧪 Cyber Lab</h1>
+
+	<CTFTrackerPanel />
 
       <section>
         <h2 className="text-2xl font-semibold mb-4">Projects Showcase</h2>
