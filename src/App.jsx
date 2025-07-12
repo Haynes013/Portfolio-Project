@@ -6,6 +6,9 @@ import Projects from "./pages/Projects";
 import CyberLab from "./pages/CyberLab";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
+import BruteForceLogin from "./demos/BruteForceLogin";
+import XssPlayground from "./demos/XssPlayground";
+import XssBruteforceDemos from "./blog/XssBruteforceDemos";
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
             <Route path="/cyber-lab" element={<CyberLab />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
+	    <Route path="/demos/brute-force" element={<BruteForceLogin />} />
+	    <Route path="/demos/xss-lab" element={<XssPlayground />} />
+	    <Route path="/blog/xss-bruteforce-demos" element={<XssBruteforceDemos />} />
           </Routes>
         </main>
       </div>
